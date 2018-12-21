@@ -4,9 +4,9 @@ namespace Shapes
 {
     public class Triangle
     {
-        private float side1;
-        private float side2;
-        private float side3;
+        public double Side1 { get; set; }
+        public double Side2 { get; set; }
+        public double Side3 { get; set; }
         public Point point1, point2, point3;
 
         /// <summary>
@@ -26,7 +26,7 @@ namespace Shapes
         /// <returns></returns>
         public bool IsEquilateral()
         {
-            if( side1 == side2 && side1 == side3)
+            if( Side1 == Side2 && Side1 == Side3)
                 return true;
             return false;
         }
@@ -40,7 +40,7 @@ namespace Shapes
             if (IsEquilateral())
                 return false;
 
-            if (side1 == side2 || side1 == side3)
+            if (Side1 == Side2 || Side1 == Side3)
                 return true;
             return false;
         }
@@ -72,6 +72,12 @@ namespace Shapes
             double ySquare = (point1.y - point2.y) * (point1.y - point2.y);
 
             return Math.Sqrt(xSquare + ySquare);
+        }
+
+        public double Area()
+        {
+            var s = (Side1 + Side2 + Side3) / 2;
+            return Math.Sqrt(s * (s - Side1) * (s - Side2) * (s - Side3));
         }
     }
 }
