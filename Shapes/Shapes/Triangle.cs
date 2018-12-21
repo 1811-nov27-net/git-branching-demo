@@ -7,6 +7,7 @@ namespace Shapes
         private float side1;
         private float side2;
         private float side3;
+        public Point point1, point2, point3;
 
         /// <summary>
         /// Calculate Triagle's area
@@ -14,9 +15,9 @@ namespace Shapes
         /// <param name=""></param>
         /// <param name="height"></param>
         /// <returns></returns>
-        public float area(float base, float height)
+        public float area(float baseSide, float height)
         {
-            return (base * height) / 2;
+            return (baseSide * height) / 2;
         }
 
         /// <summary>
@@ -50,19 +51,9 @@ namespace Shapes
         /// <returns></returns>
         public bool IsScalene()
         {
-
+            return false;
         }
-        public Point point1, point2, point3;
         
-        private static double Distance(Point point1, Point point2)
-        {
-            // Distance formula
-            // sqrt( (x2 - x1) ^ 2 + (y2 - y1) ^2)
-            double xSquare = (point1.x - point2.x) * (point1.x - point2.x);
-            double ySquare = (point1.y - point2.y) * (point1.y - point2.y);
-
-            return Math.Sqrt(xSquare + ySquare);
-        }
 
         public double Perimeter()
         {
@@ -71,6 +62,16 @@ namespace Shapes
             perimeter += Distance(point2, point3);
             perimeter += Distance(point3, point1);
             return perimeter;
+        }
+
+        private static double Distance(Point point1, Point point2)
+        {
+            // Distance formula
+            // sqrt( (x2 - x1) ^ 2 + (y2 - y1) ^2)
+            double xSquare = (point1.x - point2.x) * (point1.x - point2.x);
+            double ySquare = (point1.y - point2.y) * (point1.y - point2.y);
+
+            return Math.Sqrt(xSquare + ySquare);
         }
     }
 }
