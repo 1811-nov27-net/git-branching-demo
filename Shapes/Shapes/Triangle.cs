@@ -15,11 +15,11 @@ namespace Shapes
 
         bool IsIsoscelesTriangle(Point point1, Point point2, Point point3)
         {
-            if (point1 == point2)
+            if (Distance(point1, point2) == Distance(point1, point3))
                 return true;
-            else if (point1 == point3)
+            else if (Distance(point1, point3) == Distance(point2, point3))
                 return true;
-            else if (point2 == point3)
+            else if (Distance(point2, point3) == Distance(point1, point2))
                 return true;
             else
                 return false;
@@ -27,7 +27,7 @@ namespace Shapes
 
         bool IsEquilateralTriangle(Point point1, Point point2, Point point3)
         {
-            if (point1 == point2 && point2 == point3)
+            if (Distance(point1, point2) == Distance(point2, point3) && Distance(point2, point3) == Distance(point1, point3))
                 return true;
             else
                 return false;
