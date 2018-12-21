@@ -9,8 +9,9 @@
 
         Point[] Vertices { get; set; }
 
-        public int GetArea()
+        public double GetArea()
         {
+            double Base = Vertices[0].GetDistance(Vertices[1]);
 
         }
 
