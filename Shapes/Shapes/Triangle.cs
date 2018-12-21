@@ -1,4 +1,6 @@
-﻿namespace Shapes
+﻿using System.Collections.Generic;
+
+namespace Shapes
 {
     public class Triangle
     {
@@ -23,6 +25,16 @@
         }
 
         public decimal GetHypotenuse(decimal sideA, decimal sideB, decimal sideC)
+        {
+
+        }
+
+        public decimal CalculatePerimeter()
+        {
+            return Side1 + Side2 + Side3;
+        }
+
+        public void CalculateArea()
         {
 
         }
