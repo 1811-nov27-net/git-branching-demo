@@ -1,19 +1,34 @@
-﻿namespace Shapes
+﻿using System.Collections.Generic;
+
+namespace Shapes
 {
     public class Triangle
     {
-        public double sideA { set; get; }
-        public double sideB { set; get; }
-        public double sideC { set; get; }
-        public double perimeter { get; set; }
+        public IList<int> Sides { get; set; }
+        public IList<int> Angles { get; set; }
+        public int perimeter { get; set; }
+        public double area { get; set; }
 
-        public void SetSides(double sideA, double sideB, double sideC)
+        public Triangle(IList<int> sides, IList<int> angles)
         {
-            this.sideA = sideA;
-            this.sideB = sideB;
-            this.sideC = sideC;
-            this.perimeter = sideA + sideB + sideC;
+            Sides = sides;
+            Angles = angles;
+            CalculatePerimeter();
+        }
+
+        public void CalculatePerimeter()
+        {
+            perimeter = 0;
+            foreach (var side in Sides)
+            {
+                perimeter += side;
+            }
+        }
+
+        public void CalculateArea()
+        {
 
         }
+
     }
 }
