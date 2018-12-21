@@ -4,11 +4,15 @@
     {
         public Triangle(Point one, Point two, Point three)
         {
-            Vertices = ;
+            Vertices = new Point[] { one, two, three};
         }
 
         Point[] Vertices { get; set; }
 
+        public int GetArea()
+        {
+
+        }
 
     }
 }
