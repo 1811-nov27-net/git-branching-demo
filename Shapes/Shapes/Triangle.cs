@@ -2,6 +2,10 @@
 {
     public class Triangle
     {
+        public string triangle { get; set; }    
+        public int deg { get; set; } 
+        
+
         public struct coords
         {
             public int x, y;
