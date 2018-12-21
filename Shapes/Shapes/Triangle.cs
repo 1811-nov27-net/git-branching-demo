@@ -16,9 +16,9 @@ namespace Shapes
         /// <param name=""></param>
         /// <param name="height"></param>
         /// <returns></returns>
-        public float area(float base, float height)
+        public float area(float b, float height)
         {
-            return (base * height) / 2;
+            return (b * height) / 2;
         }
 
         /// <summary>
@@ -52,7 +52,9 @@ namespace Shapes
         /// <returns></returns>
         public bool IsScalene()
         {
-
+            if (!IsIsosceles() && !IsScalene())
+                return true;
+            return false;
         }
         
         private static double Distance(Point point1, Point point2)
