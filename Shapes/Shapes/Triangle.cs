@@ -4,34 +4,34 @@ namespace Shapes
 {
     public class Triangle
     {
+        public Point point1, point2, point3;
         double height;
         double length;
 
-        double CalculateArea(double h, double l)
+        double CalculateArea(double height, double length)
         {
-            return (h * l * 0.5);
+            return (height * length * 0.5);
         }
 
-        bool IsIsoscelesTriangle(double s1, double s2, double s3)
+        bool IsIsoscelesTriangle(Point point1, Point point2, Point point3)
         {
-            if (s1 == s2)
+            if (point1 == point2)
                 return true;
-            else if (s1 == s3)
+            else if (point1 == point3)
                 return true;
-            else if (s2 == s3)
+            else if (point2 == point3)
                 return true;
             else
                 return false;
         }
 
-        bool IsEquilateralTriangle(double s1, double s2, double s3)
+        bool IsEquilateralTriangle(Point point1, Point point2, Point point3)
         {
-            if (s1 == s2 && s2 == s3)
+            if (point1 == point2 && point2 == point3)
                 return true;
             else
                 return false;
         }
-        public Point point1, point2, point3;
         
         private static double Distance(Point point1, Point point2)
         {
