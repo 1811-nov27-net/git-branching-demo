@@ -2,7 +2,7 @@
 {
     public class Triangle
     {
-        public Triangle(int x, int y, int z)
+        public Triangle(Point one, Point two, Point three)
         {
             Vertices = ;
         }
